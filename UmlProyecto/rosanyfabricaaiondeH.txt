@@ -1,0 +1,53 @@
+@startuml
+Class Mezcladora {
+  - ID_Mezcladora: int
+  - marca: string
+  - capacidad: int
+  - estado: string
+  - ubicacion: string
+}
+
+Class Bodega_de_materia_prima {
+  - ID_Bodega: int
+  - tipo_material: string
+  - cantidad: int
+  - ubicacion: string
+}
+
+Class Area_de_fundicion {
+  - ID_Area: int
+  - tipo: string
+  - capacidad: int
+  - estado: string
+  - ubicacion: string
+}
+
+Class Producto_final {
+  - ID_Producto: int
+  - nombre: string
+  - tipo: string
+  - cantidad: int
+  - ubicacion: string
+}
+
+Class Moldes {
+  - ID_Molde: int
+  - tipo: string
+  - material: string
+  - estado: string
+  - ubicacion: string
+}
+
+Mezcladora "1" *-- "many" Bodega_de_materia_prima : está en
+Bodega_de_materia_prima "1" *-- "many" Area_de_fundicion : suministra a
+Area_de_fundicion "1" *-- "many" Producto_final : produce
+Area_de_fundicion "1" *-- "many" Moldes : contiene
+
+@enduml
+
+
+
+
+
+
+
